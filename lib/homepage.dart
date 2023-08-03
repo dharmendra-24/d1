@@ -1,4 +1,44 @@
+import 'package:d1/models/programs.dart';
 import 'package:flutter/material.dart';
+
+List<Program> programList = [
+  Program(
+      title: 'A complete guide for your \nnew born baby',
+      category: 'LifeStyle',
+      image: 'assets/images/image2.png',
+      lessons: 16),
+  Program(
+      title: 'Understanding of human \n behaviour',
+      category: 'Baby Care',
+      image: 'assets/images/image1.png',
+      lessons: 12),
+];
+
+List<Program> expEventList = [
+  Program(
+      title: 'A complete guide for your \nnew born baby',
+      category: 'LifeStyle',
+      image: 'assets/images/image2.png',
+      date: "13 feb , sunday"),
+  Program(
+      title: 'Understanding of human \n behaviour',
+      category: 'Babycare',
+      image: 'assets/images/image1.png',
+      date: "13 feb , sunday"),
+];
+
+List<Program> lessonList = [
+  Program(
+      title: 'A complete guide for your \nnew born baby',
+      category: 'LifeStyle',
+      image: 'assets/images/image2.png',
+      time: "1 min"),
+  Program(
+      title: 'Understanding of human \n behaviour',
+      category: 'Baby Care',
+      image: 'assets/images/image1.png',
+      time: "3 min"),
+];
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -23,15 +63,15 @@ class _HomePageState extends State<HomePage> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            IconButton(onPressed: () {}, icon: Icon(Icons.menu)),
+            IconButton(onPressed: () {}, icon: const Icon(Icons.menu)),
             Container(
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    IconButton(onPressed: () {}, icon: Icon(Icons.forum)),
+                    IconButton(onPressed: () {}, icon: const Icon(Icons.forum)),
                     IconButton(
                         onPressed: () {},
-                        icon: Icon(Icons.notification_add_outlined))
+                        icon: const Icon(Icons.notification_add_outlined))
                   ]),
             )
           ],
@@ -88,80 +128,15 @@ class _HomePageState extends State<HomePage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  InkWell(
-                    borderRadius: BorderRadius.circular(8),
+                  HomeOptions(
+                    icon: Icons.bookmark,
+                    text: 'Courses',
                     onTap: () {},
-                    child: Container(
-                      height: 50,
-                      width: 200,
-                      decoration: BoxDecoration(
-                          //shape: BoxShape.rectangle,
-                          border: Border.all(color: Colors.blue, width: 2),
-                          borderRadius: BorderRadius.circular(8)),
-                      child: const Row(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.all(10),
-                            child: Icon(
-                              Icons.bookmark,
-                              color: Colors.blue,
-                              size: 22,
-                            ),
-                          ),
-                          SizedBox(
-                            width: 15,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.all(10),
-                            child: Text(
-                              'programs',
-                              style: TextStyle(
-                                  color: Colors.blue,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
                   ),
-                  InkWell(
-                    borderRadius: BorderRadius.circular(8),
-                    // hoverColor: Colors.red,
+                  HomeOptions(
+                    icon: Icons.help_center,
+                    text: 'Get Help',
                     onTap: () {},
-                    child: Container(
-                      height: 50,
-                      width: 200,
-                      decoration: BoxDecoration(
-                          //shape: BoxShape.rectangle,
-                          border: Border.all(color: Colors.blue, width: 2),
-                          borderRadius: BorderRadius.circular(8)),
-                      child: const Row(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.all(10),
-                            child: Icon(
-                              Icons.help_center,
-                              color: Colors.blue,
-                              size: 22,
-                            ),
-                          ),
-                          SizedBox(
-                            width: 15,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.all(10),
-                            child: Text(
-                              'Get Help',
-                              style: TextStyle(
-                                  color: Colors.blue,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
                   ),
                 ],
               ),
@@ -171,406 +146,283 @@ class _HomePageState extends State<HomePage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  InkWell(
+                  HomeOptions(
+                    icon: Icons.book,
+                    text: 'Learn',
                     onTap: () {},
-                    child: Container(
-                      height: 50,
-                      width: 200,
-                      decoration: BoxDecoration(
-                          //shape: BoxShape.rectangle,
-                          border: Border.all(color: Colors.blue, width: 2),
-                          borderRadius: BorderRadius.circular(8)),
-                      child: const Row(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.all(10),
-                            child: Icon(
-                              Icons.book,
-                              color: Colors.blue,
-                              size: 22,
-                            ),
-                          ),
-                          SizedBox(
-                            width: 15,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.all(10),
-                            child: Text(
-                              'Learn',
-                              style: TextStyle(
-                                  color: Colors.blue,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
                   ),
-                  InkWell(
+                  HomeOptions(
+                    icon: Icons.leaderboard,
+                    text: 'DD tracker',
                     onTap: () {},
-                    child: Container(
-                      height: 50,
-                      width: 200,
-                      decoration: BoxDecoration(
-                          //shape: BoxShape.rectangle,
-                          border: Border.all(color: Colors.blue, width: 2),
-                          borderRadius: BorderRadius.circular(8)),
-                      child: const Row(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.all(10),
-                            child: Icon(
-                              Icons.leaderboard,
-                              color: Colors.blue,
-                              size: 22,
-                            ),
-                          ),
-                          SizedBox(
-                            width: 15,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.all(10),
-                            child: Text(
-                              'DD tracker',
-                              style: TextStyle(
-                                  color: Colors.blue,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
                   ),
                 ],
               ),
               const SizedBox(
                 height: 10,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    'Programs for you',
-                    style: TextStyle(
-                        color: Colors.black, fontWeight: FontWeight.bold),
-                  ),
-                  InkWell(
-                    onTap: () {},
-                    hoverColor: Colors.blue,
-                    child: Container(
-                      child: const Row(
-                        children: [Text('View all'), Icon(Icons.arrow_forward)],
-                      ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 8.0, horizontal: 5),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      'Programs for you',
+                      style: TextStyle(
+                          color: Colors.black, fontWeight: FontWeight.bold),
                     ),
-                  )
-                ],
+                    InkWell(
+                      onTap: () {},
+                      hoverColor: Colors.blue,
+                      child: Container(
+                        child: const Row(
+                          children: [
+                            Text('View all'),
+                            Icon(Icons.arrow_forward)
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
+                ),
               ),
-              SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      Card(
-                        elevation: 4,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          // crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: [
-                            Container(
-                              height: screenWidth *
-                                  0.4, // Adjust the height as needed
-                              color: Colors.grey[300],
-                              width: screenheight * 0.4,
-
-                              child: Image.network(
-                                'assets/images/image2.png',
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            const Text(
-                              'LifeStyle',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 12,
-                                  color: Colors.blue),
-                            ),
-                            const Text(
-                              'A complete guide for your \nnew born baby',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16,
-                              ),
-                            ),
-                            const Text(
-                              '16 lessons',
-                              style: TextStyle(),
-                            ),
-                          ],
+              Container(
+                  height: 285,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, i) {
+                      return CardWidget(
+                        screenWidth: screenWidth,
+                        screenheight: screenheight,
+                        bottomWidget: Text(
+                          '${programList[i].lessons} lessons',
+                          style: const TextStyle(),
                         ),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Card(
-                        elevation: 4,
-                        //decoration: BoxDecoration(
-                        ////  border: Border.all(width: 1, color: Colors.red)),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          //crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: [
-                            Container(
-                              height: screenWidth *
-                                  0.4, // Adjust the height as needed
-                              color: Colors.grey[300],
-                              width: screenheight * 0.4,
-
-                              child: ClipRRect(
-                                child: Image.network(
-                                  'assets/images/image1.png',
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ),
-                            const Text(
-                              'Babycare',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 12,
-                                  color: Colors.blue),
-                            ),
-                            const Text(
-                              'Understanding of human \n behaviour',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16,
-                              ),
-                            ),
-                            const Text(
-                              '12 lesson',
-                              style: TextStyle(),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
+                        title: programList[i].title,
+                        category: programList[i].category,
+                        image: programList[i].image,
+                      );
+                    },
+                    itemCount: programList.length,
                   )),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    'Event and Experiences',
-                    style: TextStyle(
-                        color: Colors.black, fontWeight: FontWeight.bold),
-                  ),
-                  InkWell(
-                    onTap: () {},
-                    hoverColor: Colors.blue,
-                    child: Container(
-                      child: const Row(
-                        children: [Text('View all'), Icon(Icons.arrow_forward)],
-                      ),
+              const SizedBox(height: 10),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 8.0, horizontal: 5),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      'Event and Experiences',
+                      style: TextStyle(
+                          color: Colors.black, fontWeight: FontWeight.bold),
                     ),
-                  )
-                ],
+                    InkWell(
+                      onTap: () {},
+                      hoverColor: Colors.blue,
+                      child: Container(
+                        child: const Row(
+                          children: [
+                            Text('View all'),
+                            Icon(Icons.arrow_forward)
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
+                ),
               ),
-              SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      Card(
-                        elevation: 4,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          // crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: [
-                            Container(
-                              height: screenWidth *
-                                  0.4, // Adjust the height as needed
-                              color: Colors.grey[300],
-                              width: screenheight * 0.4,
-
-                              child: Image.network(
-                                'assets/images/youngwomen.png',
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            const Text(
-                              'LifeStyle',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 12,
-                                  color: Colors.blue),
-                            ),
-                            const Text(
-                              'A complete guide for your \nnew born baby',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16,
-                              ),
-                            ),
-                            const Text(
-                              '13 feb ,sunday',
-                              style: TextStyle(),
-                            ),
-                          ],
+              Container(
+                  height: 285,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, i) {
+                      return CardWidget(
+                        screenWidth: screenWidth,
+                        screenheight: screenheight,
+                        bottomWidget: Text(
+                          '${expEventList[i].lessons}',
+                          style: const TextStyle(),
                         ),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Card(
-                        elevation: 4,
-                        //decoration: BoxDecoration(
-                        ////  border: Border.all(width: 1, color: Colors.red)),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          //crossAxisAlig
-                          //nment: CrossAxisAlignment.stretch,
-                          children: [
-                            Container(
-                              height: screenWidth *
-                                  0.4, // Adjust the height as needed
-                              color: Colors.grey[300],
-                              width: screenheight * 0.4,
-
-                              child: Image.network(
-                                'assets/images/youngwomen.png',
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            const Text(
-                              'Babycare',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 12,
-                                  color: Colors.blue),
-                            ),
-                            const Text(
-                              'Understanding of human \n behaviour',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16,
-                              ),
-                            ),
-                            const Text(
-                              '13 feb ,sunday',
-                              style: TextStyle(),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
+                        title: expEventList[i].title,
+                        category: expEventList[i].category,
+                        image: expEventList[i].image,
+                      );
+                    },
+                    itemCount: expEventList.length,
                   )),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    'Lesson for you',
-                    style: TextStyle(
-                        color: Colors.black, fontWeight: FontWeight.bold),
-                  ),
-                  InkWell(
-                    onTap: () {},
-                    hoverColor: Colors.blue,
-                    child: Container(
-                      child: const Row(
-                        children: [Text('View all'), Icon(Icons.arrow_forward)],
-                      ),
+              const SizedBox(height: 10),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 8.0, horizontal: 5),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      'Lesson for you',
+                      style: TextStyle(
+                          color: Colors.black, fontWeight: FontWeight.bold),
                     ),
-                  )
-                ],
+                    InkWell(
+                      onTap: () {},
+                      hoverColor: Colors.blue,
+                      child: Container(
+                        child: const Row(
+                          children: [
+                            Text('View all'),
+                            Icon(Icons.arrow_forward)
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
+                ),
               ),
-              SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      Card(
-                        elevation: 4,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          // crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: [
-                            Container(
-                              height: screenWidth *
-                                  0.4, // Adjust the height as needed
-                              color: Colors.grey[300],
-                              width: screenheight * 0.4,
-
-                              child: Image.network(
-                                'assets/images/youngwomen.png',
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            const Text(
-                              'LifeStyle',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 12,
-                                  color: Colors.blue),
-                            ),
-                            const Text(
-                              'A complete guide for your \nnew born baby',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16,
-                              ),
-                            ),
-                            const Text(
-                              '3 min',
-                              style: TextStyle(),
-                            ),
-                          ],
+              Container(
+                  height: 285,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, i) {
+                      return CardWidget(
+                        screenWidth: screenWidth,
+                        screenheight: screenheight,
+                        bottomWidget: Text(
+                          '${lessonList[i].time}',
+                          style: const TextStyle(),
                         ),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Card(
-                        elevation: 4,
-                        //decoration: BoxDecoration(
-                        ////  border: Border.all(width: 1, color: Colors.red)),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          //crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: [
-                            Container(
-                              height: screenWidth *
-                                  0.4, // Adjust the height as needed
-                              color: Colors.grey[300],
-                              width: screenheight * 0.4,
-
-                              child: Image.network(
-                                'assets/images/youngwomen.png',
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            const Text(
-                              'Babycare',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 12,
-                                  color: Colors.blue),
-                            ),
-                            const Text(
-                              'Understanding of human \n behaviour',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16,
-                              ),
-                            ),
-                            const Text(
-                              '1 min',
-                              style: TextStyle(),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
+                        title: lessonList[i].title,
+                        category: lessonList[i].category,
+                        image: lessonList[i].image,
+                      );
+                    },
+                    itemCount: lessonList.length,
                   )),
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class CardWidget extends StatelessWidget {
+  const CardWidget({
+    super.key,
+    required this.title,
+    required this.category,
+    required this.image,
+    this.bottomWidget,
+    required this.screenWidth,
+    required this.screenheight,
+  });
+
+  final double screenWidth;
+  final double screenheight;
+  final String title;
+  final String category;
+  final String image;
+  final Widget? bottomWidget;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.only(right: 10),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: Colors.white,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        // crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            // radius: screenWidth * 0.25,
+            child: Image.network(
+              image,
+              fit: BoxFit.cover,
+              height: 150,
+              width: 250,
+            ),
+          ),
+          const SizedBox(height: 5),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 5),
+            child: Text(
+              category,
+              style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 12,
+                  color: Colors.blue),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 5.0),
+            child: Text(
+              title,
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
+              ),
+            ),
+          ),
+          Container(
+              margin: const EdgeInsets.only(left: 5),
+              child: bottomWidget ?? Container()),
+        ],
+      ),
+    );
+  }
+}
+
+class HomeOptions extends StatelessWidget {
+  HomeOptions({
+    super.key,
+    required this.text,
+    required this.icon,
+    required this.onTap,
+  });
+  final String text;
+  final IconData icon;
+  Function() onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      borderRadius: BorderRadius.circular(8),
+      onTap: onTap,
+      child: Container(
+        height: 50,
+        width: 200,
+        decoration: BoxDecoration(
+            //shape: BoxShape.rectangle,
+            border: Border.all(color: Colors.blue, width: 2),
+            borderRadius: BorderRadius.circular(8)),
+        child: Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: Icon(
+                icon,
+                color: Colors.blue,
+                size: 22,
+              ),
+            ),
+            const SizedBox(
+              width: 15,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: Text(
+                text,
+                style: const TextStyle(
+                    color: Colors.blue,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
+          ],
         ),
       ),
     );
